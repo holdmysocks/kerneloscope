@@ -1,0 +1,23 @@
+# Normalise text files in the repository
+* text=auto
+
+# Run on Linux (CachyOS): must keep LF line endings even when checked out on Windows
+*.sh            text eol=lf
+*.conf          text eol=lf
+kerneloscope/menu.conf text eol=lf
+
+# Source code: LF everywhere
+*.rs            text eol=lf
+*.toml          text eol=lf
+Cargo.lock      text eol=lf
+
+# PowerShell scripts are Windows-only: native endings are fine
+*.ps1           text
+
+# Generated / binary assets
+*.bin           binary
+*.png           binary
+*.efi           binary
+
+# Third-party rEFInd release: store and check out byte-for-byte (its install scripts are Linux shell scripts)
+vendor/refind-bin-*/** -text

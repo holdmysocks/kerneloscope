@@ -1,0 +1,24 @@
+[package]
+name = "kerneloscope"
+version = "0.1.0"
+edition = "2024"
+description = "An animated, themed UEFI boot menu: drifting starfield, particle-burst intro, one icon per OS."
+license = "GPL-3.0-or-later"
+repository = "https://github.com/holdmysocks/kerneloscope"
+keywords = ["uefi", "bootloader", "boot-menu", "dual-boot"]
+categories = ["no-std", "embedded"]
+publish = false
+
+[dependencies]
+miniz_oxide = { version = "0.9", default-features = false, features = ["with-alloc"] }
+uefi = { version = "0.41", features = ["alloc", "global_allocator", "panic_handler"] }
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
+
+[profile.dev]
+opt-level = 1
+panic = "abort"

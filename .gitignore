@@ -1,0 +1,16 @@
+# Rust build output
+/target/
+
+# Preview / test working folders (virtual EFI partitions, firmware vars, serial logs, render temp files)
+/build/
+/build-test/
+
+# Screenshots produced by preview.ps1 / tools/test-screens.ps1 (curated ones live in docs/screenshots/)
+/shots/
+
+# Editor / OS clutter
+.vscode/
+.idea/
+*.swp
+Thumbs.db
+desktop.ini
